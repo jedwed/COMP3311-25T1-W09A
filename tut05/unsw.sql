@@ -27,11 +27,6 @@ BEGIN
         RAISE EXCEPTION 'No such unit: %', _ouid;
     END IF;
         
-    -- RETURN 
-        -- CASE _otype
-        --     WHEN 'University' THEN 'UNSW'
-        --     ELSE "osidjfosjdf"
-        -- END;
     IF _otype = 'University' THEN
         RETURN 'UNSW';
     ELSIF _otype = 'Faculty' THEN
