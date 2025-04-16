@@ -1,0 +1,22 @@
+Compute a minimal cover for:
+F   =   { B → A,  D → A,  AB → D } 
+
+Step 1: Convert to canonical form
+All RHS are single attribute, F is already in canonical form
+
+Step 2: Reduce LHS, remove redundant dependent attributes
+Consider AB -> D, see if you can reduce it to A -> D or B -> D
+
+1. B -> A
+2. B -> AB (Augmentation of 1)
+3. AB -> D (Given from F)
+4. B -> D (Transitivity using 2 and 3)
+
+Hence, we can replace AB -> D with B -> D
+
+F = {B -> A, D -> A, B -> D}
+
+Step 3: Remove redundant fds
+We can derive B -> A from transitivity using B -> D and D -> A, hence it is redundant
+
+Minimal cover Fc = {D -> A, B -> D}
